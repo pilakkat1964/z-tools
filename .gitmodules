@@ -1,0 +1,12 @@
+[submodule "z-edit"]
+	path = z-edit
+	url = https://github.com/pilakkat1964/z-edit.git
+[submodule "z-open"]
+	path = z-open
+	url = https://github.com/pilakkat1964/z-open.git
+[submodule "z-kitty-launcher"]
+	path = z-kitty-launcher
+	url = https://github.com/pilakkat1964/z-kitty-launcher.git
+[submodule "z-rclone-mount-applete"]
+	path = z-rclone-mount-applete
+	url = https://github.com/pilakkat1964/z-rclone-mount-applete.git
