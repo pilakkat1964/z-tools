@@ -1,0 +1,62 @@
+# Navigation structure for Minimal Mistakes theme
+# https://mmistakes.github.io/minimal-mistakes/docs/navigation/
+
+main:
+  - title: "Home"
+    url: /
+  
+  - title: "Projects"
+    url: /projects/
+    children:
+      - title: "All Projects"
+        url: /projects/
+      - title: "By Category"
+        url: /projects/#categories
+      - title: "By Tag"
+        url: /projects/#tags
+  
+  - title: "Blog"
+    url: /blog/
+  
+  - title: "Documentation"
+    url: /guide/
+    children:
+      - title: "Full User Guide"
+        url: /guide/
+      - title: "Quick Reference"
+        url: /quick-ref/
+  
+  - title: "About"
+    url: /about/
+  
+  - title: "Contribute"
+    url: /contribute/
+
+# Projects submenu
+projects:
+  - title: "Z-Edit"
+    url: https://github.com/pilakkat1964/z-edit
+    description: "Smart file editor launcher based on MIME type"
+  
+  - title: "Z-Open"
+    url: https://github.com/pilakkat1964/z-open
+    description: "Intelligent file/URL opener with fuzzy matching"
+  
+  - title: "Z-Kitty Launcher"
+    url: https://github.com/pilakkat1964/z-kitty-launcher
+    description: "Terminal session manager for Kitty emulator"
+  
+  - title: "Z-RClone Mount Applete"
+    url: https://github.com/pilakkat1964/z-rclone-mount-applete
+    description: "System tray manager for rclone cloud storage"
+
+# Footer navigation
+footer:
+  - title: "GitHub"
+    url: https://github.com/pilakkat1964
+  
+  - title: "Issues"
+    url: https://github.com/pilakkat1964/z-tools/issues
+  
+  - title: "Discussions"
+    url: https://github.com/pilakkat1964/z-tools/discussions

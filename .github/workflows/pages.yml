@@ -6,16 +6,7 @@ on:
       - main
       - master
     paths:
-      - '**.md'
-      - '_config.yml'
-      - 'Gemfile'
-      - 'Gemfile.lock'
-      - '_data/**'
-      - '_pages/**'
-      - '_projects/**'
-      - '_posts/**'
-      - '_layouts/**'
-      - 'assets/**'
+      - 'docs/**'
       - '.github/workflows/pages.yml'
   pull_request:
     branches:
@@ -48,20 +39,22 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
           cache-version: 0
+          working-directory: ./docs
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
 
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build
+        working-directory: ./docs
         env:
           JEKYLL_ENV: production
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site
+          path: ./docs/_site
 
   # Only deploy on push to main/master, not on pull requests
   deploy:
