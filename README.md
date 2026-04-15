@@ -39,6 +39,24 @@ This repository provides:
 
 ## Getting Started
 
+### 🌐 Portfolio Site
+
+This repository also serves as a **professional portfolio website** using Jekyll and the Minimal Mistakes theme!
+
+**Visit the live site:** [pilakkat.mywire.org/z-tools](http://pilakkat.mywire.org/z-tools/)
+
+**Maintain your portfolio:**
+- 📚 [Full User Guide](/guide/) - Complete documentation
+- ⚡ [Quick Reference](/quick-ref/) - One-page cheat sheet
+- 📋 [Templates](/tree/main/_templates) - Copy & paste templates
+
+**Quick actions:**
+- Add a project: Copy `_templates/project-template.md` → `_projects/`
+- Write a blog post: Copy `_templates/blog-post-template.md` → `_posts/YYYY-MM-DD-title.md`
+- Create a page: Copy `_templates/page-template.md` → `_pages/`
+
+See [_templates/README.md](_templates/README.md) for detailed examples.
+
 ### ⚡ Quick Bootstrap (Recommended)
 
 Bootstrap a complete development environment with a single command:

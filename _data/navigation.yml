@@ -18,6 +18,14 @@ main:
   - title: "Blog"
     url: /blog/
   
+  - title: "Documentation"
+    url: /guide/
+    children:
+      - title: "Full User Guide"
+        url: /guide/
+      - title: "Quick Reference"
+        url: /quick-ref/
+  
   - title: "About"
     url: /about/
   
