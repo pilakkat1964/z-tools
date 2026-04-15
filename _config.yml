@@ -1,0 +1,184 @@
+# Minimal Mistakes Jekyll Theme Configuration
+# Z-Tools Portfolio Site
+
+# Site Settings
+title: "Z-Tools Portfolio"
+subtitle: "Linux Utilities & Systems Engineering"
+name: "Santhosh Kumar Pilakkat"
+description: "A unified suite of specialized Linux utilities designed to work together seamlessly"
+url: "https://pilakkat.mywire.org"
+baseurl: "/z-tools"
+repository: "pilakkat1964/z-tools"
+teaser: "/assets/images/logo.png"
+logo: "/assets/images/logo-small.png"
+
+# Theme
+remote_theme: "mmistakes/minimal-mistakes@4.26.1"
+minimal_mistakes_skin: "dark"
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Pagination
+paginate: 10
+paginate_path: /blog/page:num/
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Collections are in root directory (no collections_dir needed)
+
+# Defaults - Pages with sidebar
+defaults:
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      sidebar:
+        nav: "main"
+  
+  # _projects
+  - scope:
+      path: "_projects"
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      sidebar:
+        nav: "main"
+      gallery: true
+  
+  # _posts
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      sidebar:
+        nav: "main"
+
+# Author profile (sidebar)
+author:
+  name: "Santhosh Kumar Pilakkat"
+  avatar: "/assets/images/profile.jpg"
+  bio: |
+    AI Engineer, Computer Vision Specialist, and Systems Engineering Enthusiast.
+    
+    Building open-source tools for developer productivity.
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/pilakkat1964"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "#"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "#"
+
+# Read More label
+read_more: "Read More"
+
+# Locale
+locale: "en-US"
+lang: en
+
+# Site Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/pilakkat1964"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "#"
+
+# Comments (disabled for now)
+comments:
+  provider: false
+
+# Search
+search: true
+search_full_content: true
+
+# Analytics (optional)
+analytics:
+  provider: false
+
+# Markdown Processing
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  footnote_backlinks: true
+  auto_ids: true
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Output
+safe: false
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gems/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - "*.gemspec"
+  - "*.md"
+  - ".git"
+  - ".gitignore"
+  - "scripts/"
+  - "z-edit/"
+  - "z-open/"
+  - "z-kitty-launcher/"
+  - "z-rclone-mount-applete/"
+  - "docs/"
+  - "Conversion-plan.md"
+  - "BOOTSTRAP_IMPLEMENTATION.md"
+  - "CONTRIBUTING_TEMPLATE.md"
+  - "AGENTS.md"
+
+# Include in processing
+include:
+  - .htaccess
+  - _pages
+  - CNAME
+
+# Plugins Configuration
+
