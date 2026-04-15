@@ -34,8 +34,7 @@ collections:
     output: true
     permalink: /projects/:name/
 
-# Collections order
-collections_dir: _collections
+# Collections are in root directory (no collections_dir needed)
 
 # Defaults - Pages with sidebar
 defaults:
