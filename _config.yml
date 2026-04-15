@@ -178,6 +178,7 @@ exclude:
 include:
   - .htaccess
   - _pages
+  - CNAME
 
 # Plugins Configuration
 
