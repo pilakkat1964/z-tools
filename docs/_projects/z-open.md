@@ -129,6 +129,7 @@ prefer_mime = true
 
 ## Links
 
+- **Project Site**: [pilakkat.mywire.org/z-open/](https://pilakkat.mywire.org/z-open/)
 - **GitHub**: [pilakkat1964/z-open](https://github.com/pilakkat1964/z-open)
 - **Issues**: [Report bugs or request features](https://github.com/pilakkat1964/z-open/issues)
 - **Discussions**: [Ask questions](https://github.com/pilakkat1964/z-open/discussions)

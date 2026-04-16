@@ -111,6 +111,7 @@ zedit --init-config          # Create user config
 
 ## Links
 
+- **Project Site**: [pilakkat.mywire.org/z-edit/](https://pilakkat.mywire.org/z-edit/)
 - **GitHub**: [pilakkat1964/z-edit](https://github.com/pilakkat1964/z-edit)
 - **Issues**: [Report bugs or request features](https://github.com/pilakkat1964/z-edit/issues)
 - **Latest Release**: [GitHub Releases](https://github.com/pilakkat1964/z-edit/releases)
