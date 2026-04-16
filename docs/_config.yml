@@ -160,19 +160,9 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - "*.gemspec"
-  - "*.md"
   - ".git"
   - ".gitignore"
-  - "scripts/"
-  - "z-edit/"
-  - "z-open/"
-  - "z-kitty-launcher/"
-  - "z-rclone-mount-applete/"
-  - "docs/"
-  - "Conversion-plan.md"
-  - "BOOTSTRAP_IMPLEMENTATION.md"
-  - "CONTRIBUTING_TEMPLATE.md"
-  - "AGENTS.md"
+  - README.md
 
 # Include in processing
 include:
