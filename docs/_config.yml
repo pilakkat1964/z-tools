@@ -33,6 +33,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+  portfolio-docs:
+    output: true
+    permalink: /portfolio-docs/:name/
 
 # Collections are in root directory (no collections_dir needed)
 
@@ -58,6 +61,16 @@ defaults:
       sidebar:
         nav: "main"
       gallery: true
+  
+  # _portfolio-docs
+  - scope:
+      path: "_portfolio-docs"
+      type: portfolio-docs
+    values:
+      layout: single
+      author_profile: false
+      sidebar:
+        nav: "main"
   
   # _posts
   - scope:

@@ -25,6 +25,8 @@ main:
         url: /guide/
       - title: "Quick Reference"
         url: /quick-ref/
+      - title: "Portfolio Documentation"
+        url: /documentation/
   
   - title: "About"
     url: /about/

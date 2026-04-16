@@ -2,6 +2,12 @@
 
 A unified coordination hub for a complementary suite of specialized Linux utilities and tools.
 
+## 🌐 Portfolio Website
+
+**✨ Explore the full portfolio:** [**https://pilakkat.mywire.org/z-tools/**](https://pilakkat.mywire.org/z-tools/)
+
+This repository is also hosted as a professional portfolio website with project showcase, blog, and comprehensive documentation. Built with Jekyll and Minimal Mistakes theme.
+
 ## Purpose
 
 This repository serves as the central governance and coordination point for the **z-tools ecosystem** - a collection of focused, single-purpose command-line utilities designed to work together seamlessly.

@@ -78,6 +78,21 @@ Optimized for Linux environments. Packaging for Debian, PyPI, Crates.io, and mor
 
 ---
 
+## Portfolio Documentation
+
+Comprehensive technical documentation for the entire z-tools ecosystem, including standardization guides, CI/CD pipelines, build infrastructure, and development workflows.
+
+📚 **[Browse Complete Portfolio Documentation →](/documentation/)**
+
+Quick access to common topics:
+- **[CI/CD Standardization Guide](/portfolio-docs/ci-cd-standardization-guide/)** - Build pipeline standards across all projects
+- **[Crates.io Publishing](/portfolio-docs/crates-io-analysis/)** - Guide to publishing Rust projects
+- **[Repository Tool Guide](/portfolio-docs/repo-tool-guide/)** - Multi-project development tool
+- **[Bootstrap Documentation](/portfolio-docs/bootstrap/)** - Project setup and initialization
+- **[Cross-Project Index](/portfolio-docs/cross-project-index/)** - Overview of all z-tools projects
+
+---
+
 ## Quick Start
 
 ### Install Z-Edit
