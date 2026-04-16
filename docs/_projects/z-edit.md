@@ -11,6 +11,13 @@ excerpt: "Smart file editor launcher that automatically opens files in the right
 
 **Z-Edit** is an intelligent file editor launcher designed for developers who work with multiple file types and switching between editors efficiently is crucial.
 
+## Links
+
+- **Project Site**: [pilakkat.mywire.org/z-edit/](https://pilakkat.mywire.org/z-edit/)
+- **GitHub**: [pilakkat1964/z-edit](https://github.com/pilakkat1964/z-edit)
+- **Issues**: [Report bugs or request features](https://github.com/pilakkat1964/z-edit/issues)
+- **Latest Release**: [GitHub Releases](https://github.com/pilakkat1964/z-edit/releases)
+
 ## Problem
 
 Developers often work with diverse file types - source code, configuration files, documentation, media assets - each requiring a different tool. Manual editor selection is tedious and error-prone. Z-Edit solves this by automatically choosing the right editor based on:
@@ -108,13 +115,6 @@ zedit --init-config          # Create user config
 - [Design Document](https://github.com/pilakkat1964/z-edit/blob/main/docs/design.md) - Architecture deep-dive
 - [Build Guide](https://github.com/pilakkat1964/z-edit/blob/main/docs/build.md) - Compilation and packaging
 - [Development Guide](https://github.com/pilakkat1964/z-edit/blob/main/DEVELOPMENT.md) - Contributing workflow
-
-## Links
-
-- **Project Site**: [pilakkat.mywire.org/z-edit/](https://pilakkat.mywire.org/z-edit/)
-- **GitHub**: [pilakkat1964/z-edit](https://github.com/pilakkat1964/z-edit)
-- **Issues**: [Report bugs or request features](https://github.com/pilakkat1964/z-edit/issues)
-- **Latest Release**: [GitHub Releases](https://github.com/pilakkat1964/z-edit/releases)
 
 ---
 

@@ -11,6 +11,13 @@ excerpt: "Intelligent file and URL opener with fuzzy matching and content-aware 
 
 **Z-Open** is a versatile file and URL opener that intelligently routes content to the most appropriate application using fuzzy matching and MIME type detection.
 
+## Links
+
+- **Project Site**: [pilakkat.mywire.org/z-open/](https://pilakkat.mywire.org/z-open/)
+- **GitHub**: [pilakkat1964/z-open](https://github.com/pilakkat1964/z-open)
+- **Issues**: [Report bugs or request features](https://github.com/pilakkat1964/z-open/issues)
+- **Discussions**: [Ask questions](https://github.com/pilakkat1964/z-open/discussions)
+
 ## Problem
 
 Opening files typically requires knowing the exact command or application. Users often find themselves typing verbose commands or struggling to remember which tool handles which file type. Z-Open simplifies this by:
@@ -126,13 +133,6 @@ prefer_mime = true
 - [User Guide](https://github.com/pilakkat1964/z-open/blob/main/docs/user-guide.md) - Complete reference
 - [Design Document](https://github.com/pilakkat1964/z-open/blob/main/docs/design.md) - Architecture details
 - [Examples](https://github.com/pilakkat1964/z-open/blob/main/docs/examples.md) - Real-world usage
-
-## Links
-
-- **Project Site**: [pilakkat.mywire.org/z-open/](https://pilakkat.mywire.org/z-open/)
-- **GitHub**: [pilakkat1964/z-open](https://github.com/pilakkat1964/z-open)
-- **Issues**: [Report bugs or request features](https://github.com/pilakkat1964/z-open/issues)
-- **Discussions**: [Ask questions](https://github.com/pilakkat1964/z-open/discussions)
 
 ---
 
