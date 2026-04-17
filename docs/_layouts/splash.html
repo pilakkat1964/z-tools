@@ -7,19 +7,21 @@ layout: default
 {% if site.hierarchy_level == 1 %}
 <style>
   .hierarchy-nav {
-    background-color: #f9f9f9;
-    border-bottom: 1px solid #e0e0e0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #1f1f1f;
+    border-bottom: 1px solid #333;
     padding: 12px 0;
     margin-bottom: 20px;
   }
   .hierarchy-nav a {
-    color: #0366d6;
+    color: #ffffff;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
+    transition: color 0.2s ease;
   }
   .hierarchy-nav a:hover {
-    text-decoration: underline;
+    color: #ffdd57;
+    text-decoration: none;
   }
 </style>
 <div class="hierarchy-nav" style="margin: 0 auto; max-width: 1200px; padding-left: 20px; padding-right: 20px;">
