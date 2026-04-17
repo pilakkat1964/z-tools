@@ -179,3 +179,8 @@ include:
 
 # Plugins Configuration
 
+
+# Site Hierarchy Navigation
+hierarchy_level: 1
+hierarchy_parent_url: /
+hierarchy_parent_title: "Santhosh Kumar Pilakkat"
