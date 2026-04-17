@@ -59,6 +59,17 @@ feature_row2:
 
 {% include feature_row id="feature_row2" %}
 
+## Navigate the Ecosystem
+
+Each project has its own dedicated documentation site with detailed guides, API references, and examples. Use the links below to explore:
+
+- **[Z-Edit](https://pilakkat.mywire.org/z-edit/)** - Smart file editor launcher (Python)
+- **[Z-Open](https://pilakkat.mywire.org/z-open/)** - Intelligent file opener (Python)
+- **[Z-Kitty Launcher](https://pilakkat.mywire.org/z-kitty-launcher/)** - Terminal session manager (Rust)
+- **[Z-RClone Mount Applete](https://pilakkat.mywire.org/z-rclone-mount-applete/)** - System tray manager for rclone (Rust)
+
+Each project site includes quick-start guides, installation instructions, and links back to this portfolio.
+
 ## Why Z-Tools?
 
 ### 🎯 **Unix Philosophy**
