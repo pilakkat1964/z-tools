@@ -1,0 +1,49 @@
+---
+layout: archive
+---
+<!-- Site Hierarchy Navigation for Z-Tools Portfolio (Home Layout) -->
+{% if site.hierarchy_level == 1 %}
+<style>
+  .hierarchy-nav {
+    background: #252a34;
+    border-bottom: 1px solid #51555d;
+    padding: 12px 0;
+    margin-bottom: 20px;
+  }
+  .hierarchy-nav a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .hierarchy-nav a:hover {
+    color: #bbb;
+    text-decoration: none;
+  }
+</style>
+<div class="hierarchy-nav" style="margin: 0 auto; max-width: 1200px; padding-left: 20px; padding-right: 20px;">
+  <a href="/" title="Navigate to site home">
+    ↑ Site Home
+  </a>
+</div>
+{% endif %}
+
+{%- assign locale = page.locale | default: layout.locale | default: site.locale %}
+
+{{ content }}
+
+<h3 class="archive__subtitle">{{ site.data.ui-text[locale].recent_posts | default: "Recent Posts" }}</h3>
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+<div class="entries-{{ entries_layout }}">
+  {% include documents-collection.html locale=locale entries=posts type=entries_layout %}
+</div>
+
+{% include paginator.html locale=locale %}
