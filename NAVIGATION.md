@@ -1,249 +1,145 @@
-# Z-Tools Site Hierarchy Navigation
+# Z-Tools Portfolio Site Hierarchy Navigation
 
-## Overview
+> **📚 Shared Documentation**: This navigation scheme is documented at the portfolio level.  
+> See `/pilakkat1964-github-io/NAVIGATION.md` for the generic multi-level portfolio navigation guide.  
+> This document provides Z-Tools specific implementation details.
 
-The Z-Tools portfolio consists of 5 interconnected Jekyll-based GitHub Pages sites organized in a two-level hierarchy:
+## Quick Overview
 
-```
-Z-Tools Portfolio (Level 1)
-├── Z-Edit (Level 2)
-├── Z-Open (Level 2)
-├── Z-Kitty Launcher (Level 2)
-└── Z-RClone Mount Applete (Level 2)
-```
+The Z-Tools portfolio uses the shared multi-level navigation system with:
+- **Portfolio Lead (Level 1)**: Z-Tools Portfolio at `/z-tools/`
+- **Child Projects (Level 2)**: Z-Edit, Z-Open, Z-Kitty Launcher, Z-RClone Mount Applete
 
-Each project has its own dedicated documentation site with automatic navigation between parent and child sites.
+Each project shows an "↑ Up to Z-Tools Portfolio" navigation link, and the portfolio shows a "Navigate the Ecosystem" section with all projects.
 
-## Site Structure
+## Z-Tools Specific Configuration
 
-### Level 1: Z-Tools Portfolio
-- **URL**: https://pilakkat.mywire.org/z-tools/
-- **Theme**: Minimal Mistakes (customized for portfolio)
-- **Purpose**: Unified entry point showing all projects
-- **Navigation**: Shows "Navigate the Ecosystem" section with links to all child projects
-
-### Level 2: Child Projects (Z-Edit, Z-Open, Z-Kitty Launcher, Z-RClone Mount Applete)
-- **URLs**: 
-  - https://pilakkat.mywire.org/z-edit/
-  - https://pilakkat.mywire.org/z-open/
-  - https://pilakkat.mywire.org/z-kitty-launcher/
-  - https://pilakkat.mywire.org/z-rclone-mount-applete/
-- **Theme**: Jekyll Theme Architect (professional blue styling)
-- **Purpose**: Detailed project documentation and guides
-- **Navigation**: Shows "Up to Z-Tools Portfolio" link at top of all pages
-
-## Navigation Implementation
-
-### Automatic Hierarchy Navigation
-
-Each site has automatic "Up" navigation implemented via Jekyll includes:
-
-#### Configuration Files
-Each project's `docs/_config.yml` defines hierarchy metadata:
-
+### Portfolio Lead Configuration
+**File**: `docs/_config.yml`
 ```yaml
-# Level 1 (Portfolio)
 hierarchy_level: 1
 hierarchy_parent_url: /
 hierarchy_parent_title: "Santhosh Kumar Pilakkat"
+```
 
-# Level 2 (Projects)
+### Child Projects Configuration
+**Files**: `z-edit/docs/_config.yml`, `z-open/docs/_config.yml`, etc.
+```yaml
 hierarchy_level: 2
 hierarchy_parent_url: /z-tools
 hierarchy_parent_title: "Z-Tools Portfolio"
 ```
 
-#### Include File
-All projects use a standardized `docs/_includes/hierarchy-nav.html`:
+## Z-Tools Implementation Files
 
-```html
-{% if site.hierarchy_level and site.hierarchy_level > 1 %}
-  <!-- Site Hierarchy Navigation -->
-  <div style="background-color: #f5f5f5; border-bottom: 1px solid #ddd; padding: 12px 0; margin-bottom: 20px;">
-    {% if site.hierarchy_parent_url %}
-      <div style="padding: 0 15px;">
-        <a href="{{ site.hierarchy_parent_url }}" style="color: #0366d6; text-decoration: none; font-size: 14px;">
-          ↑ Up to {{ site.hierarchy_parent_title }}
-        </a>
-      </div>
-    {% endif %}
-  </div>
-{% endif %}
+### Navigation Include (Standardized)
+- Location: `docs/_includes/hierarchy-nav.html` (all projects)
+- Function: Renders "↑ Up to [Parent]" link for Level 2+ sites
+- Status: ✅ Implemented and working
+
+### Layout Integration
+- **Z-Tools (Portfolio)**: `docs/_includes/page__content.html`
+- **Projects**: `docs/_layouts/default.html`
+
+### Homepage Navigation
+- **File**: `docs/index.md`
+- **Feature**: "Navigate the Ecosystem" section with links to all 4 child projects
+
+## Z-Tools Project Structure
+
+```
+Z-Tools Portfolio
+├── Z-Edit
+│   ├── https://pilakkat.mywire.org/z-edit/
+│   └── "↑ Up to Z-Tools Portfolio"
+├── Z-Open
+│   ├── https://pilakkat.mywire.org/z-open/
+│   └── "↑ Up to Z-Tools Portfolio"
+├── Z-Kitty Launcher
+│   ├── https://pilakkat.mywire.org/z-kitty-launcher/
+│   └── "↑ Up to Z-Tools Portfolio"
+└── Z-RClone Mount Applete
+    ├── https://pilakkat.mywire.org/z-rclone-mount-applete/
+    └── "↑ Up to Z-Tools Portfolio"
 ```
 
-**Key Features:**
-- Only displays for Level 2+ sites (not on portfolio root)
-- Uses absolute URLs (no relative_url filter to avoid baseurl doubling)
-- Conditional rendering based on hierarchy_level
-- Consistent styling across all projects
+## Implementation Details
 
-#### Layout Integration
-The include is called from:
-- **z-tools**: `docs/_includes/page__content.html` (minimal-mistakes override)
-- **z-edit, z-open, z-kitty-launcher, z-rclone-mount-applete**: `docs/_layouts/default.html` (architect theme)
+### What Works
+✅ Backward navigation: All 4 projects show "↑ Up to Z-Tools Portfolio" link  
+✅ Forward navigation: Portfolio homepage lists all 4 projects  
+✅ Correct URLs: All links point to correct locations  
+✅ Styled consistently: Light gray background, blue links  
+✅ Automatic on GitHub Pages: No manual rebuilds needed  
 
-### Forward Navigation
+### Files Involved
 
-#### Portfolio Homepage
-The z-tools portfolio homepage (`docs/index.md`) includes a "Navigate the Ecosystem" section with direct links to all child projects:
+**Z-Tools Portfolio**:
+- `docs/index.md` - Ecosystem navigation section
+- `docs/_includes/page__content.html` - Navigation include call
+- `docs/_config.yml` - Hierarchy metadata
 
-```markdown
-## Navigate the Ecosystem
+**Each Child Project**:
+- `docs/_includes/hierarchy-nav.html` - Navigation include
+- `docs/_layouts/default.html` - Include call
+- `docs/_config.yml` - Hierarchy metadata
 
-Each project has its own dedicated documentation site with detailed guides, API references, and examples. Use the links below to explore:
+## Adding a New Project to Z-Tools
 
-- **[Z-Edit](https://pilakkat.mywire.org/z-edit/)** - Smart file editor launcher (Python)
-- **[Z-Open](https://pilakkat.mywire.org/z-open/)** - Intelligent file opener (Python)
-- **[Z-Kitty Launcher](https://pilakkat.mywire.org/z-kitty-launcher/)** - Terminal session manager (Rust)
-- **[Z-RClone Mount Applete](https://pilakkat.mywire.org/z-rclone-mount-applete/)** - System tray manager for rclone (Rust)
-```
+To add a new project to the Z-Tools portfolio:
 
-#### Project Homepages
-Each child project's documentation index includes cross-links to other projects for discovery.
-
-## Maintenance Guide
-
-### Adding a New Level 2 Project
-
-To add a new project to the z-tools hierarchy:
-
-1. **Create Jekyll documentation** in the project's `docs/` folder
-2. **Add hierarchy metadata** to `docs/_config.yml`:
+1. **Set up documentation** in project's `docs/` folder
+2. **Add to `docs/_config.yml`**:
    ```yaml
    hierarchy_level: 2
    hierarchy_parent_url: /z-tools
    hierarchy_parent_title: "Z-Tools Portfolio"
    ```
-3. **Add hierarchy include** to `docs/_layouts/default.html` or similar:
-   ```html
-   {% include hierarchy-nav.html %}
-   ```
-4. **Copy the include file** to `docs/_includes/hierarchy-nav.html` (or create it with the standardized content)
-5. **Update z-tools portfolio** to include the new project in:
-   - Homepage "Navigate the Ecosystem" section
-   - Project feature rows (if using feature_row layout)
+3. **Copy navigation include**: `docs/_includes/hierarchy-nav.html`
+4. **Add include to layout**: `docs/_layouts/default.html`
+5. **Update portfolio**: Add project to `z-tools/docs/index.md` "Navigate the Ecosystem" section
 
-### Updating Navigation Links
+## Testing Navigation
 
-If a project's base URL changes:
+```bash
+# Verify portfolio shows ecosystem navigation
+curl https://pilakkat.mywire.org/z-tools/ | grep -A 5 "Navigate the Ecosystem"
 
-1. **Update `docs/_config.yml`** in the child project:
-   ```yaml
-   baseurl: /new-path
-   hierarchy_parent_url: /z-tools  # Parent URL usually stays the same
-   ```
-2. **If portfolio root changes**, update `hierarchy_parent_url` in ALL child projects
-3. **Update z-tools homepage** to reflect any new URLs
-
-### Testing Navigation
-
-1. **Build locally**:
-   ```bash
-   cd docs && jekyll serve
-   ```
-2. **Verify links** - Navigate up and down the hierarchy
-3. **Test in production** after deploying to GitHub Pages
-
-### Common Issues
-
-**Issue**: Navigation not showing on child sites
-- **Cause**: `hierarchy_level` not set to 2 in `_config.yml`
-- **Fix**: Add `hierarchy_level: 2` to `_config.yml`
-
-**Issue**: "Up" links point to wrong location
-- **Cause**: `hierarchy_parent_url` is incorrect or has extra paths
-- **Fix**: Use absolute paths starting with `/`: `/z-tools`, not `/z-tools/`
-
-**Issue**: Navigation showing on portfolio site
-- **Cause**: The include check `site.hierarchy_level > 1` is being ignored
-- **Fix**: Ensure `hierarchy_level: 1` is set in portfolio `_config.yml`
-
-**Issue**: Broken links after theme update
-- **Cause**: `relative_url` filter being reapplied to navigation links
-- **Fix**: Remove `| relative_url` filter from hierarchy-nav.html - use raw URLs
-
-## Files Involved
-
-### Z-Tools Portfolio
-- `docs/index.md` - Homepage with ecosystem navigation section
-- `docs/_includes/page__content.html` - Includes hierarchy navigation (minimal-mistakes override)
-- `docs/_config.yml` - Site hierarchy metadata (level 1)
-
-### Each Child Project (Z-Edit, Z-Open, Z-Kitty Launcher, Z-RClone Mount Applete)
-- `docs/_includes/hierarchy-nav.html` - Standardized navigation include
-- `docs/_layouts/default.html` - Includes hierarchy navigation in page layout
-- `docs/_config.yml` - Site hierarchy metadata (level 2)
-
-## Navigation Flow Diagram
-
-```
-┌─────────────────────────────────────────────┐
-│    Z-Tools Portfolio Homepage               │
-│  https://pilakkat.mywire.org/z-tools/      │
-│                                             │
-│  Navigate the Ecosystem                     │
-│  [Z-Edit] [Z-Open] [Kitty] [RClone]        │
-└──────────┬──────────────────────────────────┘
-           │
-           ├─────────────┬────────────┬──────────────┐
-           │             │            │              │
-           ▼             ▼            ▼              ▼
-        ┌──────┐  ┌──────────┐  ┌──────────────┐  ┌─────────────┐
-        │Z-Edit│  │  Z-Open  │  │ Z-Kitty Lnch │  │ Z-RClone    │
-        │ Page │  │   Page   │  │   Page       │  │ Mount Page  │
-        │      │  │          │  │              │  │             │
-        │ ↑    │  │  ↑       │  │   ↑          │  │  ↑          │
-        │ Up   │  │  Up      │  │   Up         │  │  Up         │
-        │ to   │  │  to      │  │   to         │  │  to         │
-        │ Z-   │  │  Z-      │  │   Z-Tools    │  │  Z-Tools    │
-        │Tools │  │  Tools   │  │   Portfolio  │  │  Portfolio  │
-        └──────┘  └──────────┘  └──────────────┘  └─────────────┘
+# Verify each project shows parent link
+curl https://pilakkat.mywire.org/z-edit/ | grep -A 1 "Up to Z-Tools"
+curl https://pilakkat.mywire.org/z-open/ | grep -A 1 "Up to Z-Tools"
+curl https://pilakkat.mywire.org/z-kitty-launcher/ | grep -A 1 "Up to Z-Tools"
+curl https://pilakkat.mywire.org/z-rclone-mount-applete/ | grep -A 1 "Up to Z-Tools"
 ```
 
-## GitHub Pages Deployment
+## Troubleshooting
 
-All sites are deployed on GitHub Pages with automatic rebuilds on every push:
+See the shared navigation guide at `/pilakkat1964-github-io/NAVIGATION.md` for:
+- Common issues and solutions
+- Maintenance procedures
+- Link troubleshooting
+- Theme-specific integration
 
-- **Build Trigger**: Push to master/main branch in `/docs` folder
-- **Build Time**: ~1-2 minutes per site
-- **HTTPS**: Enabled with valid certificates
-- **Automatic**: No manual rebuild needed
+## Implementation History
 
-### Repository URLs
-- **Z-Tools**: https://github.com/pilakkat1964/z-tools
-- **Z-Edit**: https://github.com/pilakkat1964/z-edit
-- **Z-Open**: https://github.com/pilakkat1964/z-open
-- **Z-Kitty Launcher**: https://github.com/pilakkat1964/z-kitty-launcher
-- **Z-RClone Mount Applete**: https://github.com/pilakkat1964/z-rclone-mount-applete
+**Date**: April 17, 2026
 
-## User Experience
-
-### From Z-Tools Portfolio
-Users can:
-1. See all projects at https://pilakkat.mywire.org/z-tools/
-2. Click on any project to go to its dedicated site
-3. Each project site links back to the portfolio
-
-### From Child Project
-Users can:
-1. Read detailed project documentation
-2. Click "↑ Up to Z-Tools Portfolio" at the top to return to main site
-3. See cross-project links for related tools
-
-## History
-
-**Implementation Date**: April 17, 2026
-
-**Components**:
-- Fixed field name inconsistency: `parent_url` → `hierarchy_parent_url` (all 5 sites)
-- Removed `relative_url` filter from navigation links (prevented URL doubling)
-- Added hierarchy_level check to prevent displaying navigation on portfolio root
-- Added "Navigate the Ecosystem" section to z-tools homepage
-- Created this documentation guide
+**Changes**:
+- Fixed `parent_url` → `hierarchy_parent_url` inconsistency
+- Removed `relative_url` filter (prevented URL doubling)
+- Added hierarchy_level check (prevents portfolio showing nav)
+- Added ecosystem navigation section to homepage
+- All commits pushed and deployed
 
 **Commits**:
-- z-edit: 28f5818, 7d30fd7, 7534e59
-- z-open: 8d40f3f, c226636, 3969064
-- z-kitty-launcher: 6af56e8, 1238260, aae7e42
-- z-rclone-mount-applete: 6f122d5, bf8821d, 4f70beb
-- z-tools: ae03b8d, 7b793af, 79699a8
+- 28f5818, 7d30fd7, 7534e59 - z-edit fixes
+- 8d40f3f, c226636, 3969064 - z-open fixes
+- 6af56e8, 1238260, aae7e42 - z-kitty-launcher fixes
+- 6f122d5, bf8821d, 4f70beb - z-rclone-mount-applete fixes
+- ae03b8d, 7b793af, 79699a8 - z-tools fixes and ecosystem navigation
+
+## See Also
+
+- **Shared Guide**: `../pilakkat1964.github.io/NAVIGATION.md` - Generic multi-level portfolio navigation
+- **Z-Tools Portfolio**: https://pilakkat.mywire.org/z-tools/
+- **GitHub**: https://github.com/pilakkat1964/z-tools
